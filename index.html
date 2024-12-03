@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesh Monitors</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="guideModal" class="modal">
+        <div class="modal-content">
+            <h2>Welcome to Mesh Monitors!</h2>
+            <div class="guide-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <p>Configure your filters by selecting the checkboxes for the features you want to monitor (First Creator Coin, Dev Status, etc.)</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <p>Set your parameters by entering values for Market Cap, Holders, Dev Buy percentages, and Coin Age</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <p>Enter your Discord Webhook URL to receive notifications when matches are found</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <p>Click "Start Monitoring" to begin tracking pump.fun coins that match your criteria</p>
+                </div>
+            </div>
+            <button id="closeGuide" class="modal-close">Got it!</button>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo-container">
+            <svg class="mesh-logo" viewBox="0 0 50 50" width="40" height="40">
+                <circle class="logo-circle" cx="25" cy="25" r="23" fill="none" stroke="white" stroke-width="2"/>
+                <path class="mesh-ball" d="M25 10 
+                    C35 10, 40 20, 40 25
+                    C40 35, 30 40, 25 40
+                    C15 40, 10 30, 10 25
+                    C10 15, 20 10, 25 10
+                    M15 20 L35 30
+                    M35 20 L15 30
+                    M20 15 L30 35
+                    M30 15 L20 35" 
+                    stroke="white" 
+                    stroke-width="1.5"
+                    fill="none"/>
+            </svg>
+            <h1>Mesh Monitors</h1>
+        </div>
+        <nav>
+            <div class="social-buttons">
+                <a href="https://x.com/mesh_monitors" class="social-btn twitter" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://t.me/meshmonitors" class="social-btn telegram" target="_blank">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <button class="guide-btn">
+                    <i class="fas fa-question-circle"></i>
+                    Guide
+                </button>
+                <a href="https://pump.fun/board" class="buy-now-btn" target="_blank">Buy Now</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="monitor-config">
+            <div class="toggles">
+                <h2>Filters</h2>
+                <div class="toggle-group">
+                    <label>
+                        <input type="checkbox" id="firstCreator">
+                        First Creator Coin
+                    </label>
+                    <label>
+                        <input type="checkbox" id="devOut">
+                        Dev is Out
+                    </label>
+                    <label>
+                        <input type="checkbox" id="fundedCex">
+                        Funded via CEX
+                    </label>
+                    <label>
+                        <input type="checkbox" id="uniqueSocials">
+                        Unique Socials
+                    </label>
+                    <label>
+                        <input type="checkbox" id="atLeastOneSocial">
+                        At Least One Social
+                    </label>
+                    <label>
+                        <input type="checkbox" id="websiteWorking">
+                        Website is Working
+                    </label>
+                    <label>
+                        <input type="checkbox" id="uniqueImage">
+                        Unique Image
+                    </label>
+                    <label>
+                        <input type="checkbox" id="uniqueName">
+                        Unique Name
+                    </label>
+                </div>
+            </div>
+
+            <div class="variables">
+                <h2>Parameters</h2>
+                <div class="input-group">
+                    <label>
+                        Market Cap (USD):
+                        <input type="number" id="marketCap" placeholder="Min market cap">
+                    </label>
+                    <label>
+                        Minimum Holders:
+                        <input type="number" id="minHolders" placeholder="Min holders">
+                    </label>
+                    <label>
+                        Max Dev Buy:
+                        <input type="number" id="maxDevBuy" placeholder="Max dev buy %">
+                    </label>
+                    <label>
+                        Min Dev Buy:
+                        <input type="number" id="minDevBuy" placeholder="Min dev buy %">
+                    </label>
+                    <label>
+                        Max Coin Age (days):
+                        <input type="number" id="maxCoinAge" placeholder="Max coin age">
+                    </label>
+                </div>
+            </div>
+
+            <div class="webhook-section">
+                <h2>Discord Webhook</h2>
+                <input type="text" id="webhookUrl" placeholder="Enter Discord webhook URL">
+                <button id="startButton" class="start-btn">Start Monitoring</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mesh Monitors. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 
